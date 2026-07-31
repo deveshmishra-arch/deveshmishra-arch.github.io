@@ -2,52 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfolio of Devesh Mishra—architect, urban designer and researcher."
+  >
+
   <title>Devesh Mishra | Architect & Urban Designer</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #e8e5de;
-      color: #171714;
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(70px, 15vw, 220px);
-      line-height: 0.8;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
-    }
-
-    p {
-      max-width: 500px;
-      font-size: 18px;
-      line-height: 1.5;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main>
-    <p>Architect · Urban Designer · Researcher</p>
 
-    <h1>Devesh<br>Mishra</h1>
+  <header class="site-header">
+    <a class="logo" href="#top">
+      DM<span>●</span>
+    </a>
 
-    <p>
-      Portfolio of architecture, urban regeneration, research,
-      adaptive reuse and photography.
-    </p>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#photography">Photography</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+
+  <main id="top">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="roles">
+          <span>Architect</span>
+          <span>Urban designer</span>
+          <span>Researcher</span>
+        </div>
+
+        <h1>
+          <span>Devesh</span>
+          <span>Mishra</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+          <p class="introduction">
+            Working across <em>urban regeneration</em>, adaptive
+            reuse and climate transition—using design and research
+            to make inherited places useful again.
+          </p>
+
+          <a class="scroll-link" href="#work">
+            Selected work ↓
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <figure class="hero-image">
+
+        <img
+          src="hero-urban-housing.jpg"
+          alt="Colourful residential buildings framed by trees and a public bench"
+        >
+
+        <figcaption>
+          Everyday urban landscape / Photograph by Devesh Mishra
+        </figcaption>
+
+      </figure>
+
+    </section>
+
+
+    <div class="marquee" aria-hidden="true">
+      <div>
+        Architecture ✳ Urban regeneration ✳ Research ✳
+        Photography ✳ Architecture ✳ Urban regeneration ✳
+        Research ✳ Photography ✳
+      </div>
+    </div>
+
+
+    <section class="intro-section" id="work">
+
+      <p class="section-label">
+        01 / Selected work
+      </p>
+
+      <h2>
+        Projects as <em>arguments</em>, not simply objects.
+      </h2>
+
+    </section>
+
+
+    <section class="intro-section" id="photography">
+
+      <p class="section-label">
+        02 / Photography
+      </p>
+
+      <h2>
+        Observing the city <em>between projects.</em>
+      </h2>
+
+    </section>
+
+
+    <section class="intro-section" id="about">
+
+      <p class="section-label">
+        03 / About
+      </p>
+
+      <h2>
+        Designing with what the city <em>already has.</em>
+      </h2>
+
+    </section>
+
   </main>
+
+
+  <footer class="footer">
+
+    <span>
+      Devesh Mishra © 2026
+    </span>
+
+    <a
+      href="https://www.instagram.com/__._divyam_.__/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram ↗
+    </a>
+
+    <a href="#top">
+      Back to top ↑
+    </a>
+
+  </footer>
+
 </body>
 </html>
