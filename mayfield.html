@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Mayfield Depot — a research-led adaptive reuse and sustainable urban regeneration project by Devesh Mishra and Harshvardhan S. Chouhan."
+  >
+
+  <title>Mayfield Depot — Devesh Mishra</title>
+
+  <style>
+    :root {
+      --background: #f4f3ef;
+      --white: #ffffff;
+      --black: #111111;
+      --grey: #686760;
+      --line: #d8d5cc;
+      --red: #8f2636;
+      --green: #9db84c;
+      --orange: #e98768;
+      --sand: #ddc6a3;
+      --maximum-width: 1500px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 0 3vw;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+      background: rgba(244, 243, 239, 0.95);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .logo-dot {
+      color: var(--red);
+    }
+
+    .navigation {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .navigation a {
+      color: var(--black);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .navigation a:hover {
+      color: var(--red);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 42% 58%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(3rem, 7vw, 8rem) 4vw 3rem;
+    }
+
+    .eyebrow,
+    .section-number,
+    .figure-label {
+      margin: 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 2rem 0;
+      font-size: clamp(3.7rem, 8vw, 8.5rem);
+      line-height: 0.83;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-description {
+      max-width: 38rem;
+      margin: 0;
+      font-size: clamp(1rem, 1.3vw, 1.3rem);
+    }
+
+    .hero-image {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* PROJECT INFORMATION */
+
+    .project-information {
+      max-width: var(--maximum-width);
+      margin: auto;
+      padding: 4rem 3vw;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .information-item span {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--grey);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .information-item p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      max-width: var(--maximum-width);
+      margin: auto;
+      padding: clamp(5rem, 9vw, 9rem) 3vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-heading h2 {
+      max-width: 1050px;
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 5.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+
+    .introduction-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 7rem);
+    }
+
+    .lead {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.3vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .body-text {
+      max-width: 700px;
+    }
+
+    .body-text p:first-child {
+      margin-top: 0;
+    }
+
+    .research-question {
+      margin: 5rem 0 0;
+      padding: clamp(2rem, 5vw, 5rem);
+      border-left: 6px solid var(--red);
+      background: var(--white);
+      font-size: clamp(1.4rem, 2.5vw, 2.8rem);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    /* IMAGES */
+
+    figure {
+      margin: 0 0 clamp(3.5rem, 7vw, 7rem);
+    }
+
+    figure:last-child {
+      margin-bottom: 0;
+    }
+
+    .image-button {
+      width: 100%;
+      display: block;
+      padding: 0;
+      border: 0;
+      background: var(--white);
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+
+    .image-button img {
+      transition: transform 0.4s ease;
+    }
+
+    .image-button:hover img {
+      transform: scale(1.01);
+    }
+
+    figcaption {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      color: var(--grey);
+      font-size: 0.87rem;
+    }
+
+    figcaption strong {
+      color: var(--black);
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+    }
+
+    .image-grid figure {
+      margin-bottom: 1rem;
+    }
+
+    /* RRR FRAMEWORK */
+
+    .dark-section {
+      max-width: none;
+      color: var(--background);
+      background: var(--black);
+    }
+
+    .dark-section > * {
+      max-width: var(--maximum-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-bottom: 5rem;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .pillar {
+      min-height: 270px;
+      padding: 2rem;
+      background: var(--black);
+    }
+
+    .pillar:nth-child(1) {
+      border-top: 7px solid var(--orange);
+    }
+
+    .pillar:nth-child(2) {
+      border-top: 7px solid var(--green);
+    }
+
+    .pillar:nth-child(3) {
+      border-top: 7px solid var(--sand);
+    }
+
+    .pillar h3 {
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.6rem, 2.5vw, 2.6rem);
+      text-transform: uppercase;
+    }
+
+    .pillar p {
+      color: #c9c6bf;
+    }
+
+    /* PERFORMANCE */
+
+    .statistics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 4rem 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .statistic {
+      padding: 2rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .statistic strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .statistic span {
+      display: block;
+      margin-top: 1rem;
+      color: var(--grey);
+      font-size: 0.78rem;
+    }
+
+    /* PUBLICATION */
+
+    .publication {
+      padding: clamp(2rem, 5vw, 5rem);
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .publication h3 {
+      max-width: 1050px;
+      margin: 1rem 0 2rem;
+      font-size: clamp(2rem, 4vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .publication p {
+      max-width: 900px;
+    }
+
+    .publication-status {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    .project-footer {
+      padding: 5rem 3vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      color: var(--background);
+      background: var(--black);
+    }
+
+    .project-footer a {
+      text-decoration: none;
+      font-size: clamp(1.4rem, 3vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .project-footer a:hover {
+      color: var(--orange);
+    }
+
+    /* IMAGE LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 4.5rem 2rem 2rem;
+      background: rgba(8, 8, 8, 0.96);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      padding: 0;
+      border: 0;
+      color: var(--white);
+      background: transparent;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero,
+      .introduction-grid,
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-text {
+        min-height: 550px;
+      }
+
+      .hero-image {
+        min-height: 400px;
+      }
+
+      .project-information {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .statistics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      figcaption {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-header {
+        min-height: 62px;
+      }
+
+      .navigation a:not(:first-child) {
+        display: none;
+      }
+
+      .hero-text {
+        min-height: 470px;
+        padding: 3rem 6vw;
+      }
+
+      .hero-image {
+        min-height: 280px;
+      }
+
+      .project-information {
+        grid-template-columns: 1fr;
+        padding: 3rem 6vw;
+      }
+
+      .section {
+        padding-left: 6vw;
+        padding-right: 6vw;
+      }
+
+      .statistics {
+        grid-template-columns: 1fr;
+      }
+
+      .project-footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- NAVIGATION -->
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      DM<span class="logo-dot">●</span>
+    </a>
+
+    <nav class="navigation">
+      <a href="index.html#work">← All work</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#design">Design</a>
+      <a href="#research">Research</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Master of Architecture Thesis · 2024</p>
+
+        <h1>Mayfield Depot</h1>
+
+        <p class="hero-description">
+          Circular adaptive reuse of Manchester’s former railway depot as a
+          connected ecological, cultural and energy-producing urban
+          infrastructure.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="images/mayfield/mayfield-01-hero.png"
+          alt="Mayfield Depot regeneration project collage"
+        >
+      </div>
+    </section>
+
+    <!-- PROJECT INFORMATION -->
+
+    <section class="project-information">
+      <div class="information-item">
+        <span>Location</span>
+        <p>Manchester, United Kingdom</p>
+      </div>
+
+      <div class="information-item">
+        <span>Year</span>
+        <p>2023–2024</p>
+      </div>
+
+      <div class="information-item">
+        <span>Type</span>
+        <p>Master of Architecture thesis</p>
+      </div>
+
+      <div class="information-item">
+        <span>Authors</span>
+        <p>Devesh Mishra<br>Harshvardhan S. Chouhan</p>
+      </div>
+
+      <div class="information-item">
+        <span>Supervisors</span>
+        <p>Prof. Paola Altamura<br>Prof. Laura Pedata</p>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-number">01 / Overview</p>
+
+        <h2>
+          From infrastructural barrier to regenerative urban commons
+        </h2>
+      </div>
+
+      <div class="introduction-grid">
+        <p class="lead">
+          The project reimagines Mayfield Depot and its elevated railway as a
+          multi-layered system connecting heritage, ecology, public life and
+          circular resource flows.
+        </p>
+
+        <div class="body-text">
+          <p>
+            Located beside Manchester Piccadilly Station, Mayfield Park and the
+            River Medlock, the former depot occupies a strategic but fragmented
+            part of the city. Railway viaducts, impermeable surfaces,
+            inaccessible edges and underused spaces interrupt pedestrian
+            movement and ecological continuity.
+          </p>
+
+          <p>
+            The proposal operates across neighbourhood, site, building and
+            environmental-system scales. Existing structures are retained and
+            adapted while public routes, cultural programmes, productive
+            landscapes, renewable-energy systems and flood-responsive spaces
+            reconnect the depot with its surroundings.
+          </p>
+        </div>
+      </div>
+
+      <p class="research-question">
+        How can adaptive reuse transform dismissed railway heritage into an
+        eco-efficient urban infrastructure without erasing its architectural
+        identity?
+      </p>
+    </section>
+
+    <!-- EXISTING SITE -->
+
+    <section class="section">
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-02-existing-site.png"
+            alt="Existing Mayfield Depot, park and railway infrastructure"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Existing condition</span>
+
+          <span>
+            <strong>A fragmented post-industrial landscape.</strong>
+            Mayfield Depot sits between active railway infrastructure,
+            Mayfield Park, the River Medlock and Manchester’s city centre.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-03-context-map.png"
+            alt="Urban context map showing Mayfield Depot and surrounding areas"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Urban context</span>
+
+          <span>
+            The depot is positioned within Manchester’s network of
+            universities, cultural destinations, mobility corridors and
+            fragmented green spaces.
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ANALYSIS -->
+
+    <section class="section" id="analysis">
+      <div class="section-heading">
+        <p class="section-number">02 / Analysis</p>
+
+        <h2>
+          Reading the city before drawing the intervention
+        </h2>
+      </div>
+
+      <div class="introduction-grid">
+        <p class="lead">
+          Anthropic, biophysical and bioclimatic analyses identified the site’s
+          barriers, risks and regenerative capacity.
+        </p>
+
+        <div class="body-text">
+          <p>
+            The research examined roads and public transport, green-blue
+            systems, flood exposure, ecological opportunities, solar access and
+            the condition of the depot structure.
+          </p>
+
+          <p>
+            These analytical layers were synthesised into a design brief rather
+            than treated as decorative mapping.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-grid" style="margin-top: 4rem;">
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-04-mobility-analysis.png"
+              alt="Roads, mobility, public transport and urban nodes analysis"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Anthropic</span>
+            <span>
+              <strong>Mobility and nodes.</strong>
+              Piccadilly creates regional accessibility while road and rail
+              infrastructure produce local barriers.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-05-biophysical-analysis.png"
+              alt="Biophysical analysis of green spaces and the River Medlock"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Biophysical</span>
+            <span>
+              <strong>Existing green-blue systems.</strong>
+              The site can bridge scattered open spaces and reinforce the
+              Medlock corridor.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-06-flood-risk.png"
+              alt="Flood-risk analysis around Mayfield and the River Medlock"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Climate risk</span>
+            <span>
+              <strong>Flood exposure.</strong>
+              The River Medlock requires space for water rather than further
+              containment.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-07-ecological-opportunities.png"
+              alt="Ecological and tree-planting opportunities"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Opportunity</span>
+            <span>
+              <strong>Ecological reconnection.</strong>
+              Riparian, canalside and street-tree opportunities form the basis
+              of a connected landscape.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-08-solar-analysis.png"
+              alt="Seasonal and hourly solar analysis"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Bioclimatic</span>
+            <span>
+              <strong>Solar access.</strong>
+              Seasonal shadow studies informed planting, skylights and
+              energy-generating roof surfaces.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-09-swot-synthesis.png"
+              alt="SWOT synthesis of the Mayfield site analysis"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Synthesis</span>
+            <span>
+              <strong>From evidence to design.</strong>
+              The findings reveal opportunities for ecological continuity,
+              accessible movement and active reuse.
+            </span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- RRR FRAMEWORK -->
+
+    <section class="section dark-section">
+      <div class="section-heading">
+        <p class="section-number">03 / Framework</p>
+
+        <h2>Revitalize. Renurture. Reconnect.</h2>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <h3>Revitalize</h3>
+          <p>
+            Activate the depot, arches and infrastructural leftovers through
+            cultural production, markets, learning, work and inclusive public
+            programmes.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <h3>Renurture</h3>
+          <p>
+            Restore ecological processes through floodable landscapes,
+            riparian planting, productive roofs, biodiversity and circular
+            water systems.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <h3>Reconnect</h3>
+          <p>
+            Repair physical and social fragmentation through accessible
+            pedestrian, cycling and ecological connections across multiple
+            levels.
+          </p>
+        </article>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-10-rrr-urban-strategy.png"
+            alt="Revitalize Renurture Reconnect urban strategy"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Urban framework</span>
+          <span>
+            The three strategies translate the analytical findings into
+            coordinated actions across the neighbourhood.
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- URBAN DESIGN -->
+
+    <section class="section" id="design">
+      <div class="section-heading">
+        <p class="section-number">04 / Urban design</p>
+
+        <h2>
+          A connected landscape of public life, water and slow mobility
+        </h2>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-11-urban-masterplan.png"
+            alt="Mayfield urban masterplan"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Urban masterplan</span>
+          <span>
+            Green routes, cycle infrastructure and public programmes connect
+            Mayfield with nearby universities, neighbourhoods and city-centre
+            destinations.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-12-site-masterplan.png"
+            alt="Detailed Mayfield site masterplan"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Site masterplan</span>
+          <span>
+            The depot roof, Mayfield Park and River Medlock operate as one
+            continuous public and ecological system.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-13-floodable-park-scenarios.png"
+            alt="Floodable park water-level scenarios"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Climate adaptation</span>
+          <span>
+            <strong>A landscape designed to flood.</strong>
+            The park accommodates normal water levels, seasonal high water and
+            a 100-year flood plus climate-change scenario.
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="image-grid">
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-14-riparian-landscape.png"
+              alt="Floodable riparian landscape intervention"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Renurture</span>
+            <span>
+              Terraced planting and public access restore the river edge as a
+              civic and ecological space.
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <button class="image-button" type="button">
+            <img
+              src="images/mayfield/mayfield-15-underpass-activation.png"
+              alt="Public-space activation beneath road infrastructure"
+              loading="lazy"
+            >
+          </button>
+
+          <figcaption>
+            <span class="figure-label">Revitalize</span>
+            <span>
+              Underused infrastructural space becomes a market and social
+              destination.
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <figure style="margin-top: 5rem;">
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-16-mobility-public-realm.png"
+            alt="Slow-mobility and public-realm intervention"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Reconnect</span>
+          <span>
+            Slow mobility, public transport and shaded pedestrian space replace
+            road-dominated residual land.
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- BUILDING DESIGN -->
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-number">05 / Building</p>
+
+        <h2>
+          Adaptive reuse above, beneath and through the arches
+        </h2>
+      </div>
+
+      <div class="introduction-grid" style="margin-bottom: 4rem;">
+        <p class="lead">
+          The depot is retained as an industrial framework into which
+          reversible, lightweight and climate-responsive elements are inserted.
+        </p>
+
+        <div class="body-text">
+          <p>
+            The building strategy creates a continuous public corridor, a
+            productive roofscape, low-E glazed façades, box-in-box rooms and
+            timber mezzanines.
+          </p>
+
+          <p>
+            New interventions remain visually distinct from the historic brick
+            arches and steel structure.
+          </p>
+        </div>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-17-building-concept1.png"
+            alt="Building concept showing a public corridor and productive roof"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Building concept 01</span>
+          <span>
+            <strong>Horizontal and vertical continuity.</strong>
+            A public corridor passes through the depot while the former railway
+            roof becomes an accessible ecological landscape.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-17-building-concept2.png"
+            alt="Building concept showing glazing, box-in-box insertions and mezzanines"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Building concept 02</span>
+          <span>
+            <strong>Reversible architectural insertions.</strong>
+            Low-E glazing, independently conditioned volumes and mezzanines
+            improve comfort and capacity while preserving heritage legibility.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-18-structural-reuse.png"
+            alt="Existing and proposed structural systems"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Structural reuse</span>
+          <span>
+            The existing steel and masonry system is retained, repaired and
+            supplemented with lightweight timber components.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-19-building-plan-elevation.png"
+            alt="Principal building plan and south-facing elevation"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Plan and elevation</span>
+          <span>
+            Cultural, educational, working and hospitality programmes are
+            organised around a continuous internal route and the retained
+            structural grid.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-20-productive-roof-plan.png"
+            alt="Productive roof plan with planting, greenhouses and photovoltaic glazing"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Productive roof</span>
+          <span>
+            Intensive and extensive planting, greenhouses, photovoltaic glass
+            and accessible paths transform the former rail deck into public
+            infrastructure.
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ENVIRONMENTAL PERFORMANCE -->
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-number">06 / Performance</p>
+
+        <h2>
+          Closing energy, water and ecological loops
+        </h2>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-21-environmental-systems.png"
+            alt="Mayfield environmental and ecological systems"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Integrated systems</span>
+          <span>
+            Active and passive systems connect photovoltaic glass, wind power,
+            ventilation, rainwater harvesting, urban farming, beekeeping and
+            biodiverse roofs.
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="statistics">
+        <div class="statistic">
+          <strong>12,604</strong>
+          <span>m² of elevated railway roof repurposed</span>
+        </div>
+
+        <div class="statistic">
+          <strong>7,724.91</strong>
+          <span>m² of extensive and semi-intensive green infrastructure</span>
+        </div>
+
+        <div class="statistic">
+          <strong>12,089.12</strong>
+          <span>m³ estimated annual rainwater capture</span>
+        </div>
+
+        <div class="statistic">
+          <strong>442,964.88</strong>
+          <span>kWh estimated combined annual solar and wind generation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUALISATIONS -->
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-number">07 / Experience</p>
+
+        <h2>
+          New public life within the industrial framework
+        </h2>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-22-coloured-south-facade-event-area.png"
+            alt="Event area beside the coloured southern façade"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Event area</span>
+          <span>
+            Coloured glazing animates the retained structural rhythm and creates
+            changing patterns of daylight.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-23-textile-exhibition.png"
+            alt="Textile exhibition within the reused brick railway arches"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Textile exhibition</span>
+          <span>
+            A reversible timber mezzanine supports workshops and exhibitions
+            inside the tall brick arches.
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-24-viaduct-public-space.png"
+            alt="Reused railway viaduct with cafés and public space"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Viaduct reuse</span>
+          <span>
+            The arches support cafés and public programmes while the upper level
+            becomes an accessible green route.
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- RESEARCH OUTPUT -->
+
+    <section class="section" id="research">
+      <div class="section-heading">
+        <p class="section-number">08 / Research outcome</p>
+
+        <h2>
+          From thesis project to transferable research framework
+        </h2>
+      </div>
+
+      <figure>
+        <button class="image-button" type="button">
+          <img
+            src="images/mayfield/mayfield-25-research-framework.png"
+            alt="Research framework connecting RRR with ecosystem services"
+            loading="lazy"
+          >
+        </button>
+
+        <figcaption>
+          <span class="figure-label">Research synthesis</span>
+          <span>
+            The RRR framework connects circular adaptive reuse with
+            provisioning, cultural, supporting and regulating ecosystem
+            services.
+          </span>
+        </figcaption>
+      </figure>
+
+      <article class="publication">
+        <p class="eyebrow">Resulting conference paper</p>
+
+        <h3>
+          Circular adaptive reuse of dismissed heritage railways to foster
+          sustainable regeneration: The case of Manchester Mayfield Depot
+        </h3>
+
+        <p>
+          Paola Altamura, Laura Pedata, Devesh Mishra and
+          Harshvardhan S. Chouhan
+        </p>
+
+        <p>
+          Presented at the 6th Urban Regeneration and Sustainability
+          Conference, Sapienza University of Rome, 25–27 November 2025.
+          Forthcoming in the Springer Nature Advances in Science, Technology
+          &amp; Innovation series.
+        </p>
+
+        <span class="publication-status">
+          Publication forthcoming
+        </span>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="project-footer">
+    <a href="index.html#work">← Return to selected work</a>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- IMAGE ENLARGEMENT -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded project image"
+  >
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeButton = lightbox.querySelector(".lightbox-close");
+    const imageButtons = document.querySelectorAll(".image-button");
+
+    imageButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const selectedImage = button.querySelector("img");
+
+        lightboxImage.src = selectedImage.src;
+        lightboxImage.alt = selectedImage.alt;
+
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
